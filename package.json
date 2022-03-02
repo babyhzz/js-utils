@@ -2,7 +2,8 @@
   "name": "js-utils",
   "version": "0.0.1",
   "description": "Javascript tools",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
@@ -21,8 +22,8 @@
     "rollup",
     "tools"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "hc",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/babyhzz/js-utils/issues"
   },
