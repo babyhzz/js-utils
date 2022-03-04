@@ -1,1 +1,1 @@
-export { default as isPhone } from "./isPhone";
+export { default as isMobilePhone } from "./lib/isMobilePhone";
