@@ -1,9 +1,13 @@
 {
-  "name": "js-utils",
+  "name": "@hutou/js-utils",
   "version": "0.0.1",
   "description": "Javascript tools",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
@@ -31,16 +35,19 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.1.3",
-    "ts-jest": "^27.1.3",
-    "tslib": "^2.3.1",
-    "typescript": "^4.6.2",
-    "vuepress": "^1.9.7",
     "@types/jest": "^27.4.1",
     "husky": "^7.0.0",
     "jest": "^27.5.1",
     "rollup": "^2.68.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.31.2"
+    "rollup-plugin-typescript2": "^0.31.2",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2",
+    "vuepress": "^1.9.7"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }
