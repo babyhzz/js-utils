@@ -3,10 +3,9 @@
   "version": "0.0.4",
   "description": "Javascript tools",
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c",
