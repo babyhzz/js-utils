@@ -3,3 +3,9 @@
 // Validate Functions
 // ------------------
 export { default as isMobilePhone } from "./lib/isMobilePhone";
+export { default as isIdCard } from "./lib/isIdCard";
+
+// Tools
+// ------------------
+export { default as getIdCardInfo } from "./lib/getIdCardInfo";
+export { default as generateIdCard } from "./lib/generateIdCard";
