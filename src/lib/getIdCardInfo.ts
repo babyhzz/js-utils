@@ -1,5 +1,5 @@
 import isIdCard from "./isIdCard";
-import { provinces, cities, areas } from "../data/idCard";
+import { provinces, cities, areas } from "./data/idCard";
 
 type IdCardInfo = {
   province: string;
@@ -11,7 +11,7 @@ type IdCardInfo = {
 };
 
 /**
- * 获取当前身份证相关信息
+ * 获取当前身份证相关信息，仅支持18位身份证号码
  * @param idCardNo 身份证号
  * @returns
  */

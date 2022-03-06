@@ -12,7 +12,6 @@ describe("idcard", () => {
 
   test("get idcard info", () => {
     const info = getIdCardInfo("610927201106046693");
-    console.log(info);
     expect(info).toBeTruthy();
   });
 });

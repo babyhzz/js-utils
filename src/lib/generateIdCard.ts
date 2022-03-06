@@ -1,5 +1,5 @@
-import { areas } from "../data/idCard";
-import { getParityBit } from "../internal/idCard";
+import { areas } from "./data/idCard";
+import { getParityBit } from "./internal/idCard";
 
 function randomAreaCode(): string {
   const areaCodes = Object.keys(areas);
@@ -31,6 +31,11 @@ type Options = {
   maxDate?: Date;
 };
 
+/**
+ * 生成一个18位身份证号码
+ * @param options 可选配置项
+ * @returns
+ */
 function generateIdCard(options?: Options): string {
   const { minDate = new Date(0), maxDate = new Date() } = options || {};
 
