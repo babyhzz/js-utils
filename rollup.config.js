@@ -3,13 +3,21 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
 
+const pkg = require("./package.json");
+
 export default {
   input: "src/index.ts",
-  output: {
-    name: "_",
-    file: "dist/index.js",
-    format: "umd"
-  },
+  output: [
+    {
+      name: "_",
+      file: pkg.main,
+      format: "umd",
+    },
+    {
+      file: pkg.module,
+      format: "es",
+    },
+  ],
   plugins: [
     // 查找和打包 node_modules 和其他模块
     resolve(),
@@ -17,6 +25,6 @@ export default {
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     // 代码压缩
-    terser()
-  ]
-}
+    terser(),
+  ],
+};
