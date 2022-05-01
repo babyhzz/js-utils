@@ -1,4 +1,4 @@
-import { check15IdCardNo, check18IdCardNo } from "./internal/idCard";
+import { check15IdCardNo, check18IdCardNo } from './internal/idCard';
 
 /**
  * 检测号码是否是合法身份证号码
@@ -6,7 +6,7 @@ import { check15IdCardNo, check18IdCardNo } from "./internal/idCard";
  * @returns true or false
  */
 function isIdCard(idCardNo: string) {
-  let check = /^\d{15}|(\d{17}(\d|x|X))$/.test(idCardNo);
+  const check = /^\d{15}|(\d{17}(\d|x|X))$/.test(idCardNo);
   if (!check) return false;
   if (idCardNo.length === 15) {
     return check15IdCardNo(idCardNo);

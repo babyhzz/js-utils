@@ -49,7 +49,7 @@ type Options = {
 function randomString(options?: number | Options) {
   let length: number = 32;
   let charset: CharsetType = "alphanumeric";
-  let capitalization: CapitalType | undefined = undefined;
+  let capitalization: CapitalType | undefined;
 
   if (options !== undefined) {
     if (typeof options === "number") {
@@ -84,24 +84,5 @@ function randomString(options?: number | Options) {
 
   return str;
 }
-
-// console.log(
-//   randomString(),
-//   randomString(16),
-//   randomString({ length: 6 }),
-//   randomString({ length: 6, charset: "hex" }),
-//   randomString({ length: 6, charset: "alphabetic" }),
-//   randomString({ length: 6, charset: "alphanumeric" }),
-//   randomString({
-//     length: 3,
-//     charset: "alphanumeric",
-//     capitalization: "lowercase",
-//   }),
-//   randomString({
-//     length: 3,
-//     charset: "alphanumeric",
-//     capitalization: "uppercase",
-//   })
-// );
 
 export default randomString;

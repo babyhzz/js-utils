@@ -1,9 +1,9 @@
-import { areas } from "./data/idCard";
-import { getParityBit } from "./internal/idCard";
+import { areas } from './data/idCard';
+import { getParityBit } from './internal/idCard';
 
 function randomAreaCode(): string {
   const areaCodes = Object.keys(areas);
-  const length = areaCodes.length;
+  const { length } = areaCodes;
   return areaCodes[Math.floor(Math.random() * length)];
 }
 
@@ -15,15 +15,15 @@ function randomBirthday(minDate: Date, maxDate: Date): string {
   const date = new Date(time);
 
   const year = date.getFullYear().toString();
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
   return `${year}${month}${day}`;
 }
 
 function randomSeriesNo() {
   return Math.ceil(Math.random() * 999)
     .toString()
-    .padStart(3, "0");
+    .padStart(3, '0');
 }
 
 type Options = {
@@ -39,9 +39,8 @@ type Options = {
 function generateIdCard(options?: Options): string {
   const { minDate = new Date(0), maxDate = new Date() } = options || {};
 
-  let idCardNo =
-    randomAreaCode() + randomBirthday(minDate, maxDate) + randomSeriesNo();
-  idCardNo = idCardNo + getParityBit(idCardNo);
+  let idCardNo = randomAreaCode() + randomBirthday(minDate, maxDate) + randomSeriesNo();
+  idCardNo += getParityBit(idCardNo);
 
   return idCardNo;
 }

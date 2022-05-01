@@ -1,5 +1,5 @@
-import isIdCard from "./isIdCard";
-import { provinces, cities, areas } from "./data/idCard";
+import isIdCard from './isIdCard';
+import { provinces, cities, areas } from './data/idCard';
 
 type IdCardInfo = {
   province: string;

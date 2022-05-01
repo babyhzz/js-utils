@@ -18,23 +18,13 @@ function randomInteger(min?: number, max?: number): number {
   if (min === undefined && max === undefined) {
     min = 0;
     max = 1;
-  } else {
-    if (max === undefined) {
-      max = min;
-      min = 0;
-    }
+  } else if (max === undefined) {
+    max = min;
+    min = 0;
   }
 
   // @ts-ignore
   return min + Math.floor(Math.random() * (max - min + 1));
 }
-
-// console.log(
-//   randomInteger(),
-//   randomInteger(-5),
-//   randomInteger(5),
-//   randomInteger(5, 1),
-//   randomInteger(-5, -1)
-// );
 
 export default randomInteger;
