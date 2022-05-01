@@ -1,4 +1,4 @@
-import { provinces, cities, areas } from "../data/idCard";
+import { provinces } from "../data/idCard";
 
 // 位权重
 const powers: string[] = [
@@ -38,14 +38,14 @@ const parityBit: string[] = [
 
 // 获取校验位
 const getParityBit = (idCardNo: string) => {
-  let id17 = idCardNo.substring(0, 17);
+  const id17 = idCardNo.substring(0, 17);
 
   let power = 0;
   for (let i = 0; i < 17; i++) {
     power += parseInt(id17.charAt(i), 10) * parseInt(powers[i], 10);
   }
 
-  let mod = power % 11;
+  const mod = power % 11;
   return parityBit[mod];
 };
 
@@ -81,10 +81,10 @@ const check15IdCardNo = (idCardNo: string) => {
       idCardNo
     );
   if (!check) return false;
-  let addressCode = idCardNo.substring(0, 2);
+  const addressCode = idCardNo.substring(0, 2);
   check = checkAddressCode(addressCode);
   if (!check) return false;
-  let birDayCode = `19${idCardNo.substring(6, 12)}`;
+  const birDayCode = `19${idCardNo.substring(6, 12)}`;
   check = checkBirthDayCode(birDayCode);
   if (!check) return false;
   return true;
@@ -97,10 +97,10 @@ const check18IdCardNo = (idCardNo: string) => {
       idCardNo
     );
   if (!check) return false;
-  let addressCode = idCardNo.substring(0, 2);
+  const addressCode = idCardNo.substring(0, 2);
   check = checkAddressCode(addressCode);
   if (!check) return false;
-  let birDayCode = idCardNo.substring(6, 14);
+  const birDayCode = idCardNo.substring(6, 14);
   check = checkBirthDayCode(birDayCode);
   if (!check) return false;
   return checkParityBit(idCardNo);

@@ -47,7 +47,7 @@ type Options = {
 };
 
 function randomString(options?: number | Options) {
-  let length: number = 32;
+  let length = 32;
   let charset: CharsetType = "alphanumeric";
   let capitalization: CapitalType | undefined;
 

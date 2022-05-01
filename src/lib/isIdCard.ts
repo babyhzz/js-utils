@@ -1,7 +1,7 @@
-import { check15IdCardNo, check18IdCardNo } from './internal/idCard';
+import { check15IdCardNo, check18IdCardNo } from "./internal/idCard";
 
 /**
- * 检测号码是否是合法身份证号码
+ * 检测号码是否是合法身份证号码，支持15和18位身份证
  * @param idCardNo 需要校验的身份证号码
  * @returns true or false
  */
