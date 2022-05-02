@@ -10,10 +10,6 @@
           "edge": 13,
           "ios": 10
         },
-        // "targets": "> 0.25%, not dead",
-        // "targets": {
-        //   "chrome": 49
-        // },
         "useBuiltIns": "usage",
         "corejs": {
           "version": 3,
