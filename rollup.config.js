@@ -1,8 +1,10 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
+
+const extensions = ['.ts', '.js', '.json'];
 
 export default {
   input: 'src/index.ts',
@@ -18,12 +20,15 @@ export default {
     },
   ],
   plugins: [
-    // 查找和打包 node_modules 和其他模块
-    resolve(),
-    // commonjs 转换成 es6 模块
+    resolve({
+      extensions
+    }),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
-    // 代码压缩
+    babel({
+      extensions,
+      exclude: 'node_modules/**',
+      babelHelpers: 'runtime'
+    }),
     terser(),
   ],
 };
